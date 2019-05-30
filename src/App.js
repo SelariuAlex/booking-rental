@@ -1,13 +1,22 @@
 import React from 'react';
-import { Header } from './shared/Header';
+import Header from './shared/Header';
+import RentalCard from './components/rental/RentalCard';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Header />
-      </header>
+      <Header />
+      <div className="container">
+        <section id="rentalListing">
+          <h1 className="page-title">Your Home</h1>
+          <div className="row">
+            <RentalCard />
+            <RentalCard />
+            <RentalCard />
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

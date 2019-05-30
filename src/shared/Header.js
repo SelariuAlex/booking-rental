@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Header() {
+function Header() {
   return (
     <nav className="navbar navbar-dark navbar-expand-lg">
       <div className="container">
@@ -46,3 +46,5 @@ export function Header() {
     </nav>
   );
 }
+
+export default Header;
