@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 class RentalDetail extends Component {
+  componentWillMount() {
+    const rentalId = this.props.match.params.id;
+    this.props.dispatch(actions.fetchRentalById(rentalId));
+  }
+
   render() {
+    const rental = this.props.rental;
+    console.log(this.props);
+
     return (
       <div>
-        <h1>Rental Detail {this.props.match.params.id}</h1>
+        <h1>{'nu merge'} </h1>
       </div>
     );
   }
 }
 
-export default RentalDetail;
+function mapStateToProps(state) {
+  return {
+    rental: state.rental.data
+  };
+}
+
+export default connect(mapStateToProps)(RentalDetail);
