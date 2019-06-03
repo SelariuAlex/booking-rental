@@ -15,7 +15,7 @@ class RentalDetail extends Component {
 
     return (
       <div>
-        <h1>{'nu merge'} </h1>
+        <h1>{rental.title} </h1>
       </div>
     );
   }

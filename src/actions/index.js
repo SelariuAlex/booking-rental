@@ -2,7 +2,7 @@ import { FETCH_RENTALS, FETCH_RENTAL_BY_ID } from './types';
 
 const rentals = [
   {
-    id: 1,
+    id: '1',
     title: 'Central Apartment',
     city: 'Timisoara',
     street: 'Muzicescu',
@@ -15,7 +15,7 @@ const rentals = [
     createdAt: '24/12/2017'
   },
   {
-    id: 2,
+    id: '2',
     title: 'Central Apartment 2',
     city: 'Remetea',
     street: 'Main street',
@@ -28,7 +28,7 @@ const rentals = [
     createdAt: '24/12/2017'
   },
   {
-    id: 3,
+    id: '3',
     title: 'Central Apartment 3',
     city: 'Arad',
     street: 'Timisoarei',
@@ -41,7 +41,7 @@ const rentals = [
     createdAt: '24/12/2017'
   },
   {
-    id: 4,
+    id: '4',
     title: 'Central Apartment 4',
     city: 'Timisoara',
     street: '1 Decembrie',
