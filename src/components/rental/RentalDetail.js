@@ -11,13 +11,20 @@ class RentalDetail extends Component {
 
   render() {
     const rental = this.props.rental;
-    console.log(this.props);
 
-    return (
-      <div>
-        <h1>{rental.title} </h1>
-      </div>
-    );
+    if (rental.id) {
+      return (
+        <div>
+          <h1>{rental.title} </h1>
+          <h1>{rental.city} </h1>
+          <h1>{rental.street} </h1>
+          <h1>{rental.category} </h1>
+          <h1>{rental.dailyRate} </h1>
+        </div>
+      );
+    } else {
+      return <h1>Loading...</h1>;
+    }
   }
 }
 

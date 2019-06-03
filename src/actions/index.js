@@ -1,9 +1,9 @@
-import { FETCH_RENTALS, FETCH_RENTAL_BY_ID } from './types';
+import { FETCH_RENTALS, FETCH_RENTAL_BY_ID_SUCCESS } from './types';
 
 const rentals = [
   {
     id: '1',
-    title: 'Central Apartment',
+    title: 'Central Apartment 1',
     city: 'Timisoara',
     street: 'Muzicescu',
     category: 'apartment',
@@ -47,7 +47,7 @@ const rentals = [
     street: '1 Decembrie',
     category: 'house',
     image: 'http://via.placeholder.com/350x250',
-    bedrooms: 9,
+    bedrooms: 3,
     description: 'Very nice apartment',
     dailyRate: 33,
     shared: true,
@@ -63,11 +63,17 @@ export const fetchRentals = () => {
 };
 
 export const fetchRentalById = rentalId => {
-  const rental = rentals.find(rental => rental.id === rentalId);
-  console.log(rental);
+  return function(dispatch) {
+    setTimeout(() => {
+      const rental = rentals.find(rental => rental.id === rentalId);
+      dispatch(fetchRentalByIdSuccess(rental));
+    }, 1000);
+  };
+};
 
+const fetchRentalByIdSuccess = rental => {
   return {
-    type: FETCH_RENTAL_BY_ID,
+    type: FETCH_RENTAL_BY_ID_SUCCESS,
     rental
   };
 };
