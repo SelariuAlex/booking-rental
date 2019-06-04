@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
-import Header from './shared/Header';
-import RentalList from './components/rental/RentalList';
-import RentalDetail from './components/rental/RentalDetail';
+import Header from 'shared/Header';
+import RentalList from 'components/rental/rental-listing/RentalList';
+import RentalDetail from 'components/rental/rental-detail/RentalDetail';
 
-import './App.css';
+import 'App.css';
 
 class App extends Component {
   render() {
