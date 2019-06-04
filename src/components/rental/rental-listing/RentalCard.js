@@ -8,7 +8,7 @@ function RentalCard(props) {
     <div className="col-md-3 col-xs-6">
       <Link to={`/rentals/${rental.id}`} className="rental-detail-link">
         <div className="card bwm-card">
-          <img className="card-img-top" src={rental.image} alt="rental img" />
+          <img className="card-img-top" src={rental.image} alt={rental.title} />
           <div className="card-block">
             <h6 className={`card-subtitle ${rental.category}`}>
               {rental.shared ? 'shared' : 'whole'} {rental.category} &#183;{' '}
