@@ -14,7 +14,7 @@ const app = express();
 
 app.use('/api/v1/rentals', rentalRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, function() {
   console.log('Running');
