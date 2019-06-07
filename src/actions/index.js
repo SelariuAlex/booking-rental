@@ -28,8 +28,8 @@ const fetchRentalsSuccess = rentals => {
 
 export const fetchRentals = () => {
   return dispatch => {
-    axios.get('http://localhost:3001/api/v1/rentals').then(rentals => {
-      dispatch(fetchRentalByIdSuccess(rentals));
+    axios.get('/api/v1/rentals').then(rentals => {
+      dispatch(fetchRentalsSuccess(rentals.data));
     });
   };
 };
@@ -38,10 +38,8 @@ export const fetchRentalById = rentalId => {
   return function(dispatch) {
     dispatch(fetchRentalByIdInit());
 
-    axios
-      .get(`http://localhost:3001/api/v1/rentals/${rentalId}`)
-      .then(rental => {
-        dispatch(fetchRentalByIdSuccess(rental));
-      });
+    axios.get(`/api/v1/rentals/${rentalId}`).then(rental => {
+      dispatch(fetchRentalByIdSuccess(rental));
+    });
   };
 };
