@@ -70,7 +70,8 @@
   #rentalDetails .details-section .rental-city {
     font-size: 14px;
     font-weight: 300;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    text-transform: uppercase; }
   #rentalDetails .details-section .rental-room-info {
     margin-bottom: 20px;
     font-weight: 300;
