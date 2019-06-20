@@ -26,6 +26,10 @@ const userSchema = new Schema({
   rentals: [{ type: Schema.Types.ObjectId, ref: 'Rental' }]
 });
 
+userSchema.methods.hasSamePassword = function(requiredPassword) {
+  return bcrypt.compareSync(requiredPassword, this.password);
+};
+
 userSchema.pre('save', function(next) {
   const user = this;
 
