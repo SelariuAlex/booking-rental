@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RegisterForm from './RegisterForm';
 
 class Register extends Component {
   render() {
@@ -8,7 +9,7 @@ class Register extends Component {
           <div className="row">
             <div className="col-md-5">
               <h1>Register</h1>
-              REGISTER FORM HERE!!!
+              <RegisterForm />
             </div>
             <div className="col-md-6 ml-auto">
               <div className="image-container">
