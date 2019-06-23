@@ -25,7 +25,7 @@
     color: #ededed; }
 
 .bwm-form {
-  color: gray; }
+  color: #484848; }
   .bwm-form h1 {
     font-weight: 700;
     margin-bottom: 30px; }
@@ -47,6 +47,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     margin-top: 50px;
     letter-spacing: 1px; }
+  .bwm-form .bwm-form {
+    margin-top: 15px; }
 
 .bwm-res-errors {
   margin: 10px 0; }
@@ -134,3 +136,13 @@
 
 .condo {
   color: #880c0c; }
+
+.btn-bwm {
+  background-color: #61dafb !important;
+  border-color: #61dafb !important;
+  color: black !important;
+  padding: 15px 30px;
+  font-size: 20px; }
+  .btn-bwm:hover, .btn-bwm:focus, .btn-bwm:active {
+    border-color: #61dafb !important;
+    background-color: #61dafb !important; }

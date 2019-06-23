@@ -1,5 +1,5 @@
 .bwm-form {
-  color: gray;
+  color: $main-text-gray-color;
 
   h1 {
     font-weight: 700;
@@ -31,6 +31,10 @@
     background-color: rgba(0, 0, 0, 0.5);
     margin-top: 50px;
     letter-spacing: 1px;
+  }
+
+  .bwm-form {
+    margin-top: 15px;
   }
 }
 

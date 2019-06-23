@@ -22,3 +22,18 @@
 .condo {
   color: #880c0c;
 }
+
+.btn-bwm {
+  background-color: $main-color !important;
+  border-color: $main-color !important;
+  color: black !important;
+  padding: 15px 30px;
+  font-size: 20px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $main-color !important;
+    background-color: $main-color !important;
+  }
+}

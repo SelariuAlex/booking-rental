@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import RegisterForm from './RegisterForm';
 
 class Register extends Component {
+  registerUser = userData => {
+    debugger;
+  };
   render() {
     return (
       <section id="register">
@@ -9,7 +12,7 @@ class Register extends Component {
           <div className="row">
             <div className="col-md-5">
               <h1>Register</h1>
-              <RegisterForm />
+              <RegisterForm submitCb={this.registerUser} />
             </div>
             <div className="col-md-6 ml-auto">
               <div className="image-container">
