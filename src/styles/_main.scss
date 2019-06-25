@@ -34,6 +34,7 @@
   &:focus,
   &:active {
     border-color: $main-color !important;
+    color: black !important;
     background-color: $main-color !important;
   }
 }

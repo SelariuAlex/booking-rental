@@ -56,12 +56,12 @@ const validate = values => {
     errors.email = 'Please enter email!';
   }
 
-  if (!values.passwordConfirmation) {
-    errors.passwordConfirmation = 'Please enter password confirmation!';
+  if (!values.password) {
+    errors.passwordConfirmation = 'Please enter password';
   }
 
   if (values.password !== values.passwordConfirmation) {
-    errors.password = 'Passwords must be the same';
+    errors.passwordConfirmation = 'Passwords must be the same';
   }
 
   return errors;
