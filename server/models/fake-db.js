@@ -44,7 +44,7 @@ class FakeDb {
 
     this.users = [
       {
-        usermane: 'Test User',
+        username: 'Test User',
         email: 'text@gmail.com',
         password: 'testtest'
       }

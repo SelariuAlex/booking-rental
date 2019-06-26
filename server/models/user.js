@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
-  usermane: {
+  username: {
     type: String,
     min: [3, 'Too short, min is 3 characters'],
     max: [32, 'Too long, max is 32 characters']
