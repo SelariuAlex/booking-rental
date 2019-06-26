@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RegisterForm from './RegisterForm';
 import * as actions from '../../actions';
+import { Redirect } from 'react-router-dom';
 
 class Register extends Component {
   state = {
@@ -18,7 +19,15 @@ class Register extends Component {
   };
 
   render() {
-    const { errors } = this.state;
+    const { errors, redirect } = this.state;
+
+    if (redirect) {
+      return (
+        <Redirect
+          to={{ pathname: '/login', state: { successRegister: true } }}
+        />
+      );
+    }
 
     return (
       <section id="register">
