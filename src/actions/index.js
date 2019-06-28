@@ -3,7 +3,9 @@ import axios from 'axios';
 import {
   FETCH_RENTALs_SUCCESS,
   FETCH_RENTAL_BY_ID_SUCCESS,
-  FETCH_RENTAL_BY_ID_INIT
+  FETCH_RENTAL_BY_ID_INIT,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE
 } from './types';
 
 const fetchRentalByIdInit = () => {
@@ -47,6 +49,37 @@ export const fetchRentalById = rentalId => {
       .get(`/api/v1/rentals/${rentalId}`)
       .then(res => res.data)
       .then(rental => dispatch(fetchRentalByIdSuccess(rental)));
+  };
+};
+
+//Auth
+
+const loginSuccess = token => {
+  return {
+    type: LOGIN_SUCCESS,
+    token
+  };
+};
+
+const loginFailure = errors => {
+  return {
+    type: LOGIN_FAILURE,
+    errors
+  };
+};
+
+export const login = userData => {
+  return dispatch => {
+    return axios
+      .post('/api/v1/users/auth', userData)
+      .then(res => res.data)
+      .then(token => {
+        localStorage.setItem('auth_token', token);
+        dispatch(loginSuccess(token));
+      })
+      .catch(({ response }) => {
+        dispatch(loginFailure(response.data.errors));
+      });
   };
 };
 
