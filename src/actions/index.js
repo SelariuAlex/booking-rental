@@ -1,4 +1,5 @@
 import axios from 'axios';
+import authService from '../services/auth-service';
 
 import {
   FETCH_RENTALs_SUCCESS,
@@ -54,10 +55,9 @@ export const fetchRentalById = rentalId => {
 
 //Auth
 
-const loginSuccess = token => {
+const loginSuccess = () => {
   return {
-    type: LOGIN_SUCCESS,
-    token
+    type: LOGIN_SUCCESS
   };
 };
 
@@ -68,6 +68,14 @@ const loginFailure = errors => {
   };
 };
 
+export const checkAuthState = () => {
+  return dispatch => {
+    if (authService.isAuthenticated()) {
+      dispatch(loginSuccess());
+    }
+  };
+};
+
 export const login = userData => {
   return dispatch => {
     return axios
@@ -75,7 +83,7 @@ export const login = userData => {
       .then(res => res.data)
       .then(token => {
         localStorage.setItem('auth_token', token);
-        dispatch(loginSuccess(token));
+        dispatch(loginSuccess());
       })
       .catch(({ response }) => {
         dispatch(loginFailure(response.data.errors));
