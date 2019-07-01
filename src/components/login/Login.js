@@ -11,6 +11,7 @@ class Login extends Component {
 
   render() {
     const { isAuth, errors } = this.props.auth;
+    const { successRegister } = this.props.location.state || false;
 
     if (isAuth) {
       return <Redirect to={{ pathname: '/rentals' }} />;
@@ -22,6 +23,11 @@ class Login extends Component {
           <div className="row">
             <div className="col-md-5">
               <h1>Login</h1>
+              {successRegister && (
+                <div className="alert alert-success">
+                  <p> You have been succesfuly registered. </p>
+                </div>
+              )}
               <LoginForm submitCb={this.loginUser} errors={errors} />
             </div>
             <div className="col-md-6 ml-auto">

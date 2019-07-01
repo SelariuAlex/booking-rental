@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
   return (
     <nav className="navbar navbar-dark navbar-expand-lg">
       <div className="container">
@@ -41,6 +41,9 @@ function Header() {
             <Link className="nav-item nav-link" to="/register">
               Register
             </Link>
+            <p className="nav-item nav-link" onClick={props.logout}>
+              Logout
+            </p>
           </div>
         </div>
       </div>
