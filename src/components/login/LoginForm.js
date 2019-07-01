@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { BwmInput } from '../../shared/form/BwmInput';
+import { BwmResError } from '../../shared/form/BwmResError';
 import { required, minLength4 } from '../../shared/form/validators';
 
 const LoginForm = props => {
@@ -30,6 +31,7 @@ const LoginForm = props => {
       >
         Login
       </button>
+      <BwmResError errors={errors} />
     </form>
   );
 };
