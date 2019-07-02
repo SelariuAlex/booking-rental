@@ -5,6 +5,13 @@
 @import 'rental/rental-listing.scss';
 @import 'rental/rental-detail.scss';
 
+.clickable {
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .page-title {
   font-size: 30px;
   font-weight: 700;

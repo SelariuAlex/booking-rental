@@ -123,6 +123,11 @@
     margin-bottom: 15px;
     font-weight: 300; }
 
+.clickable {
+  color: white; }
+  .clickable:hover {
+    cursor: pointer; }
+
 .page-title {
   font-size: 30px;
   font-weight: 700;
