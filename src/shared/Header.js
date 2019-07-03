@@ -8,14 +8,18 @@ class Header extends Component {
 
     if (isAuth) {
       return (
-        <a className="nav-item nav-link clickable" onClick={this.props.logout}>
+        <Link
+          to="/rentals"
+          className="nav-item nav-link clickable"
+          onClick={this.props.logout}
+        >
           Logout
-        </a>
+        </Link>
       );
     }
     return (
       <React.Fragment>
-        <Link className="nav-item nav-link active" to="/login">
+        <Link className="nav-item nav-link" to="/login">
           Login <span className="sr-only">(current)</span>
         </Link>
         <Link className="nav-item nav-link" to="/register">
