@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import Header from 'shared/Header';
 import RentalListing from 'components/rental/rental-listing/RentalListing';
@@ -30,22 +31,24 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Header logout={this.logout} />
-          <div className="container">
-            <Route exact path="/" render={() => <Redirect to="/rentals" />} />
-            <Route exact path="/rentals" component={RentalListing} />
-            <ProtectedRoute
-              exact
-              path="/rentals/:id"
-              component={RentalDetail}
-            />
-            <Route exact path="/login" component={Login} />
-            <LoggedInRoute exact path="/register" component={Register} />
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="App">
+            <Header logout={this.logout} />
+            <div className="container">
+              <Route exact path="/" render={() => <Redirect to="/rentals" />} />
+              <Route exact path="/rentals" component={RentalListing} />
+              <ProtectedRoute
+                exact
+                path="/rentals/:id"
+                component={RentalDetail}
+              />
+              <Route exact path="/login" component={Login} />
+              <LoggedInRoute exact path="/register" component={Register} />
+            </div>
           </div>
-        </div>
-      </BrowserRouter>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }

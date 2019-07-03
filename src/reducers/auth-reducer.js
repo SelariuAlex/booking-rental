@@ -17,7 +17,7 @@ export const authReducer = (state = initialState, action) => {
     case LOGIN_FAILURE:
       return Object.assign({}, state, { errors: action.errors });
     case LOGOUT:
-      return Object.assign({}, state, { isAuth: false, username: '' });
+      return Object.assign({}, state, { isAuth: false });
     default:
       return state;
   }
