@@ -7,6 +7,12 @@ import * as moment from 'moment';
 class Booking extends Component {
   constructor() {
     super();
+    this.dateRef = React.createRef();
+    this.state = {
+      startAt: '',
+      endAt: '',
+      guests: ''
+    };
 
     this.bookedOutDates = [];
   }
@@ -15,7 +21,7 @@ class Booking extends Component {
     this.getBookedOutDates();
   }
 
-  getBookedOutDates() {
+  getBookedOutDates = () => {
     const { bookings } = this.props.rental;
 
     if (bookings && bookings.length > 0) {
@@ -28,7 +34,7 @@ class Booking extends Component {
         this.bookedOutDates.push(...dateRange);
       });
     }
-  }
+  };
 
   checkInvalidDates = date => {
     return (
@@ -36,6 +42,27 @@ class Booking extends Component {
       date.diff(moment(), 'days') < 0
     );
   };
+
+  handleApply = (event, picker) => {
+    const startAt = picker.startDate.format('Y/MM/DD');
+    const endAt = picker.endDate.format('Y/MM/DD');
+
+    this.dateRef.current.value = startAt + ' to ' + endAt;
+
+    this.setState({
+      startAt,
+      endAt
+    });
+    console.log(this.state);
+  };
+
+  selectGuests = event => {
+    this.setState({
+      guests: parseInt(event.target.value, 10)
+    });
+  };
+
+  reserve = () => console.log(this.state);
 
   render() {
     const { rental } = this.props;
@@ -65,14 +92,18 @@ class Booking extends Component {
         <div className="form-group">
           <label htmlFor="guests">Guests</label>
           <input
+            onChange={event => this.selectGuests(event)}
             type="number"
             className="form-control"
             id="guests"
-            aria-describedby="emailHelp"
+            aria-describedby="guests"
             placeholder=""
           />
         </div>
-        <button className="btn btn-bwm btn-confirm btn-block">
+        <button
+          onClick={() => this.reserve()}
+          className="btn btn-bwm btn-confirm btn-block"
+        >
           Reserve place now
         </button>
         <hr />
