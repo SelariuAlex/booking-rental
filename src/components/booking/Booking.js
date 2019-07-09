@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import { getRangeOfDates } from '../../helpers';
 
+import * as moment from 'moment';
+
 class Booking extends Component {
   constructor() {
     super();
@@ -24,10 +26,16 @@ class Booking extends Component {
           'Y/MM/DD'
         );
         this.bookedOutDates.push(...dateRange);
-        console.log(this.bookedOutDates);
       });
     }
   }
+
+  checkInvalidDates = date => {
+    return (
+      this.bookedOutDates.includes(date.format('Y/MM/DD')) ||
+      date.diff(moment(), 'days') < 0
+    );
+  };
 
   render() {
     const { rental } = this.props;
