@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import { getRangeOfDates } from '../../helpers';
+import BookingModal from './BookingModal';
 
 import * as moment from 'moment';
 
@@ -9,9 +10,15 @@ class Booking extends Component {
     super();
     this.dateRef = React.createRef();
     this.state = {
-      startAt: '',
-      endAt: '',
-      guests: ''
+      proposedBooking: {
+        startAt: '',
+        endAt: '',
+        guests: ''
+      },
+      modal: {
+        open: false
+      },
+      errors: []
     };
 
     this.bookedOutDates = [];
@@ -50,19 +57,36 @@ class Booking extends Component {
     this.dateRef.current.value = startAt + ' to ' + endAt;
 
     this.setState({
-      startAt,
-      endAt
+      proposedBooking: {
+        startAt,
+        endAt
+      }
     });
-    console.log(this.state);
   };
 
   selectGuests = event => {
     this.setState({
-      guests: parseInt(event.target.value, 10)
+      proposedBooking: {
+        guests: parseInt(event.target.value, 10)
+      }
     });
   };
 
-  reserve = () => console.log(this.state);
+  confirmProposedData = () => {
+    this.setState({
+      modal: {
+        open: true
+      }
+    });
+  };
+
+  cancelConfirmation = () => {
+    this.setState({
+      modal: {
+        open: false
+      }
+    });
+  };
 
   render() {
     const { rental } = this.props;
@@ -101,7 +125,7 @@ class Booking extends Component {
           />
         </div>
         <button
-          onClick={() => this.reserve()}
+          onClick={() => this.confirmProposedData()}
           className="btn btn-bwm btn-confirm btn-block"
         >
           Reserve place now
@@ -113,6 +137,10 @@ class Booking extends Component {
         <p className="booking-note-text">
           More than 500 people checked this rental in last month.
         </p>
+        <BookingModal
+          open={this.state.modal.open}
+          closeModal={this.cancelConfirmation}
+        />
       </div>
     );
   }
