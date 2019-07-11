@@ -14,8 +14,7 @@ class Booking extends Component {
       proposedBooking: {
         startAt: '',
         endAt: '',
-        guests: '',
-        rental: {}
+        guests: ''
       },
       modal: {
         open: false
@@ -76,6 +75,17 @@ class Booking extends Component {
     });
   };
 
+  addNewBookedOutDates = booking => {
+    const dateRange = getRangeOfDates(booking.startAt, booking.endAt);
+    this.bookedOutDates.push(...dateRange);
+  };
+
+  resetData = () => {
+    this.dateRef.current.value = '';
+
+    this.setState({ proposedBooking: { guests: '' } });
+  };
+
   confirmProposedData = () => {
     const { startAt, endAt } = this.state.proposedBooking;
     const days = getRangeOfDates(startAt, endAt).length - 1;
@@ -105,7 +115,9 @@ class Booking extends Component {
   reserveRental = () => {
     actions.createBooking(this.state.proposedBooking).then(
       booking => {
-        debugger;
+        this.addNewBookedOutDates(booking);
+        this.cancelConfirmation();
+        this.resetData();
       },
       errors => {
         this.setState({ errors });
@@ -145,6 +157,7 @@ class Booking extends Component {
             onChange={event => this.selectGuests(event)}
             type="number"
             className="form-control"
+            value={guests}
             id="guests"
             aria-describedby="guests"
             placeholder=""
