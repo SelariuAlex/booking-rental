@@ -1,8 +1,16 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
+import { BwmResError } from '../../shared/form/BwmResError';
 
 function BookingModal(props) {
-  const { open, closeModal, booking, rentalPrice } = props;
+  const {
+    open,
+    closeModal,
+    booking,
+    rentalPrice,
+    confirmModal,
+    errors
+  } = props;
 
   return (
     <Modal
@@ -25,9 +33,9 @@ function BookingModal(props) {
         </p>
         <p>Do you confirm your booking for selected days?</p>
       </div>
-
+      <BwmResError errors={errors} />
       <div className="modal-footer">
-        <button type="button" className="btn btn-bwm">
+        <button onClick={confirmModal} type="button" className="btn btn-bwm">
           Confirm
         </button>
         <button type="button" onClick={closeModal} className="btn btn-bwm">

@@ -104,7 +104,7 @@ export const logout = () => {
 };
 
 export const register = userData => {
-  return axios.post('/api/v1/users/register', { ...userData }).then(
+  return axios.post('/api/v1/users/register', userData).then(
     res => {
       return res.data;
     },
@@ -112,4 +112,11 @@ export const register = userData => {
       return Promise.reject(err.response.data.errors);
     }
   );
+};
+
+export const createBooking = booking => {
+  return axiosInstance
+    .post('/bookings', booking)
+    .then(res => res.data)
+    .catch(({ response }) => Promise.reject(response.data.errors));
 };
