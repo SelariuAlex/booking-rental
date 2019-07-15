@@ -35,6 +35,7 @@ class Header extends Component {
       return (
         <div className="nav-item dropdown">
           <a
+            href="/#"
             className="nav-link nav-item dropdown-toggle clickable"
             id="navbarDropdownMenuLink"
             data-toggle="dropdown"
@@ -86,7 +87,11 @@ class Header extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ml-auto" />
-            {isAuth && <a className="nav-item nav-link">{username}</a>}
+            {isAuth && (
+              <a href="/#" className="nav-item nav-link">
+                {username}
+              </a>
+            )}
             {this.renderOwnerSection(isAuth)}
             {this.renderAuthButtons(isAuth)}
           </div>
