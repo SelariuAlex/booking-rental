@@ -31,7 +31,7 @@ class RentalSearchInput extends Component {
           ref={this.searchInput}
           className="form-control mr-sm-2 bwm-search"
           type="search"
-          placeholder='Try "New York"'
+          placeholder='Try "Timisoara"'
           aria-label="Search"
         />
         <button

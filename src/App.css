@@ -22,7 +22,7 @@
       color: #61dafb !important;
       box-shadow: none; }
   .navbar .nav-item {
-    color: #ededed; }
+    color: #ededed !important; }
   .navbar .dropdown-menu .dropdown-item {
     font-size: 12px; }
     .navbar .dropdown-menu .dropdown-item:active {
