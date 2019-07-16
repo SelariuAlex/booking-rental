@@ -6,8 +6,18 @@ const User = require('../models/user');
 
 const UserCtrl = require('../controllers/user');
 
-router.get('/secret', UserCtrl.authMiddleware, function(req, res) {
-  res.json({ secret: true });
+router.get('/manage', UserCtrl.authMiddleware, function(req, res) {
+  const user = res.locals.user;
+
+  Rental.where({ user })
+    .populate('bookings')
+    .exec(function(err, foundRentals) {
+      if (err) {
+        return res.status(422).send({ errors: normalizeErrors(err.errors) });
+      }
+
+      return res.json(foundRentals);
+    });
 });
 
 router.get('/:id', (req, res) => {
@@ -42,26 +52,22 @@ router.delete('/:id', UserCtrl.authMiddleware, function(req, res) {
       }
 
       if (user.id !== foundRental.user.id) {
-        return res
-          .status(422)
-          .send({
-            errors: [
-              { title: 'Invalid User!', detail: 'You are not rental owner!' }
-            ]
-          });
+        return res.status(422).send({
+          errors: [
+            { title: 'Invalid User!', detail: 'You are not rental owner!' }
+          ]
+        });
       }
 
       if (foundRental.bookings.length > 0) {
-        return res
-          .status(422)
-          .send({
-            errors: [
-              {
-                title: 'Active Bookings!',
-                detail: 'Cannot delete rental with active bookings!'
-              }
-            ]
-          });
+        return res.status(422).send({
+          errors: [
+            {
+              title: 'Active Bookings!',
+              detail: 'Cannot delete rental with active bookings!'
+            }
+          ]
+        });
       }
 
       foundRental.remove(function(err) {
