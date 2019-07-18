@@ -85,6 +85,15 @@ export const createRental = rentalData => {
     .post('/rentals', rentalData)
     .then(res => res.data, err => Promise.reject(err.response.data.errors));
 };
+
+//  User Rental
+
+export const getUserRentals = () => {
+  return axiosInstance
+    .get('/rentals/manage')
+    .then(res => res.data, err => Promise.reject(err.response.data.errors));
+};
+
 // User Booking
 
 const fetchUserBookingsInit = () => {
