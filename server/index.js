@@ -8,6 +8,7 @@ const rentalRoutes = require('./routes/rentals');
 const userRoutes = require('./routes/users');
 const bookingRoutes = require('./routes/bookings');
 
+mongoose.set('useCreateIndex', true);
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
   const fakeDb = new FakeDb();
   // fakeDb.seedDb();
