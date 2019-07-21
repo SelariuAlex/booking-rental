@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { prettifyDate } from '../../../helpers';
+import RentalManageModal from './RentalManageModal';
 
 class RentalManageCard extends React.Component {
   render() {
@@ -16,7 +17,9 @@ class RentalManageCard extends React.Component {
             <Link className="btn btn-bwm" to={`/rentals/${rental._id}`}>
               Go to Rental
             </Link>
-            <button className="btn btn-bwm"> Bookings </button>
+            {rental.bookings && rental.bookings.length > 0 && (
+              <RentalManageModal bookings={rental.bookings} />
+            )}
           </div>
           <div className="card-footer text-muted">
             Created at {prettifyDate(rental.createdAt)}
