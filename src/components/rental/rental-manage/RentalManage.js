@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as actions from '../../../actions';
 import { Link } from 'react-router-dom';
 import RentalManageCard from './RentalManageCard';
+import RentalManageModal from './RentalManageModal';
 
 class RentalManage extends Component {
   state = {
@@ -22,7 +23,13 @@ class RentalManage extends Component {
 
   renderRentalCards(rentals) {
     return rentals.map((rental, index) => (
-      <RentalManageCard key={index} rental={rental} rentalIndex={index} />
+      <RentalManageCard
+        modal={<RentalManageModal bookings={rental.bookings} />}
+        key={index}
+        rental={rental}
+        rentalIndex={index}
+        deleteRentalCb={this.deleteRental}
+      />
     ));
   }
 

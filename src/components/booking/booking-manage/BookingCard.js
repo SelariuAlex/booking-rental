@@ -4,6 +4,8 @@ import { prettifyDate } from '../../../helpers';
 
 export function BookingCard(props) {
   const { booking } = props;
+  console.log(booking.startAt);
+  console.log(prettifyDate(booking.startAt));
 
   return (
     <div className="col-md-4">

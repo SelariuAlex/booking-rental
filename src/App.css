@@ -127,6 +127,9 @@
     margin-bottom: 15px;
     font-weight: 300; }
 
+#userRentals .toBeDeleted {
+  border-color: red; }
+
 #userRentals .card {
   margin-bottom: 20px; }
 
@@ -155,6 +158,14 @@
 
 #userRentals .btn-bwm {
   margin-right: 10px; }
+
+.delete-menu {
+  margin-top: 5px; }
+
+.btn-danger,
+.btn-success {
+  margin-left: 10px;
+  font-size: 12px; }
 
 .rental-booking-modal .btn-bwm {
   font-size: 14px;
