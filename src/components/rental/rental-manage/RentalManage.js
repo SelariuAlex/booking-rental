@@ -3,6 +3,7 @@ import * as actions from '../../../actions';
 import { Link } from 'react-router-dom';
 import RentalManageCard from './RentalManageCard';
 import RentalManageModal from './RentalManageModal';
+import { ToastContainer, toast } from 'react-toastify';
 
 class RentalManage extends Component {
   state = {
@@ -21,7 +22,7 @@ class RentalManage extends Component {
       );
   }
 
-  renderRentalCards(rentals) {
+  renderRentalCards = rentals => {
     return rentals.map((rental, index) => (
       <RentalManageCard
         modal={<RentalManageModal bookings={rental.bookings} />}
@@ -31,12 +32,29 @@ class RentalManage extends Component {
         deleteRentalCb={this.deleteRental}
       />
     ));
-  }
+  };
+
+  deleteRentalFromList = rentalIndex => {
+    const userRentals = this.state.userRentals.slice();
+    userRentals.splice(rentalIndex, 1);
+
+    this.setState({ userRentals });
+  };
+
+  deleteRental = (rentalId, rentalIndex) => {
+    actions
+      .deleteRental(rentalId)
+      .then(
+        () => this.deleteRentalFromList(rentalIndex),
+        errors => toast.error(errors[0].detail)
+      );
+  };
 
   render() {
     const { userRentals, isFetching } = this.state;
     return (
       <section id="userRentals">
+        <ToastContainer />
         <h1 className="page-title">My Rentals</h1>
         <div className="row">{this.renderRentalCards(userRentals)}</div>
         {!isFetching && userRentals.length === 0 && (

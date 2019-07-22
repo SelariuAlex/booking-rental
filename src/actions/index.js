@@ -94,6 +94,12 @@ export const getUserRentals = () => {
     .then(res => res.data, err => Promise.reject(err.response.data.errors));
 };
 
+export const deleteRental = rentalId => {
+  return axiosInstance
+    .delete(`/rentals/${rentalId}`)
+    .then(res => res.data, err => Promise.reject(err.response.data.errors));
+};
+
 // User Booking
 
 const fetchUserBookingsInit = () => {

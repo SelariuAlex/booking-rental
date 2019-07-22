@@ -19,6 +19,12 @@ class RentalManageCard extends React.Component {
     });
   };
 
+  deleteRental = (rentalId, rentalIndex) => {
+    this.setState({ wantDelete: false });
+
+    this.props.deleteRentalCb(rentalId, rentalIndex);
+  };
+
   render() {
     const { rental, modal, rentalIndex } = this.props;
     const { wantDelete } = this.state;
