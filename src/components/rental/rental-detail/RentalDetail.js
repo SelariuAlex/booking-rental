@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { RentalDetailInfo } from './RentalDetailInfo';
+import RentalUpdate from './RentalUpdate';
 import RentalMap from './RentalMap';
 import Booking from '../../booking/Booking';
 
@@ -11,6 +12,16 @@ class RentalDetail extends Component {
     const rentalId = this.props.match.params.id;
     this.props.dispatch(actions.fetchRentalById(rentalId));
   }
+
+  renderRentalDetail = rental => {
+    const { isUpdate } = this.props.location.state || false;
+
+    return isUpdate ? (
+      <RentalUpdate rental={rental} />
+    ) : (
+      <RentalDetailInfo rental={rental} />
+    );
+  };
 
   render() {
     const rental = this.props.rental;
@@ -31,9 +42,7 @@ class RentalDetail extends Component {
 
           <div className="details-section">
             <div className="row">
-              <div className="col-md-8">
-                <RentalDetailInfo rental={rental} />
-              </div>
+              <div className="col-md-8">{this.renderRentalDetail(rental)}</div>
               <div className="col-md-4">
                 <Booking rental={rental} />
               </div>

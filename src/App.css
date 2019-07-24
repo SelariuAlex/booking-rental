@@ -178,6 +178,11 @@
   margin-left: 10px;
   font-size: 12px; }
 
+.btn-warning {
+  margin-left: 10px;
+  font-size: 12px;
+  color: white; }
+
 .rental-booking-modal .btn-bwm {
   font-size: 14px;
   color: white;
