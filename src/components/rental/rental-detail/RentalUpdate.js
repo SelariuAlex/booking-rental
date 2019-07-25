@@ -20,7 +20,7 @@ class RentalUpdate extends React.Component {
           />
           <span>{rental.user && rental.user.username}</span>
         </div>
-        {/* <h1 className="rental-title">{rental.title}</h1> */}
+
         <EditableInput entity={rental} entityField={'title'} />
         <h2 className="rental-city">{rental.city}</h2>
         <div className="rental-room-info">
