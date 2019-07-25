@@ -21,7 +21,11 @@ class RentalUpdate extends React.Component {
           <span>{rental.user && rental.user.username}</span>
         </div>
 
-        <EditableInput entity={rental} entityField={'title'} />
+        <EditableInput
+          entity={rental}
+          entityField={'title'}
+          className={'rental-title'}
+        />
         <h2 className="rental-city">{rental.city}</h2>
         <div className="rental-room-info">
           <span>

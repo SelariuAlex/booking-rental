@@ -277,6 +277,10 @@
 .daterangepicker td.active {
   background-color: #61dafb !important; }
 
+#editableComponent .btn-editable {
+  margin-left: 10px;
+  font-size: 12px; }
+
 .clickable {
   color: white; }
   .clickable:hover {
