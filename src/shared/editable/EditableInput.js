@@ -9,7 +9,7 @@ export class EditableInput extends React.Component {
 
   componentDidMount() {
     const { entity, entityField } = this.props;
-    const value = entity(entityField);
+    const value = entity[entityField];
 
     this.setState({
       value,
@@ -18,11 +18,20 @@ export class EditableInput extends React.Component {
   }
 
   disableEdit() {
-    this.setState({ disableEdit: false });
+    this.setState({ isActive: false });
+  }
+
+  enableEdit() {
+    this.setState({ isActive: true });
   }
 
   update() {
-    this.setState({ disableEdit: true });
+    const { value, originValue } = this.state;
+    const { updateEntity, entityField } = this.props;
+    if (value !== originValue) {
+      updateEntity({ [entityField]: value });
+      this.setState({ isActive: false, originValue: value });
+    }
   }
 
   renderComponentView() {
@@ -38,6 +47,13 @@ export class EditableInput extends React.Component {
             className={className}
           />
           <button
+            onClick={() => this.update()}
+            className="btn btn-success btn-editable"
+            type="button"
+          >
+            Save
+          </button>
+          <button
             onClick={() => this.disableEdit()}
             className="btn btn-warning btn-editable"
             type="button"
@@ -52,7 +68,7 @@ export class EditableInput extends React.Component {
       <React.Fragment>
         <span className={className}>{value}</span>
         <button
-          onClick={() => this.update()}
+          onClick={() => this.enableEdit()}
           className="btn btn-warning btn-editable"
           type="button"
         >
@@ -67,6 +83,8 @@ export class EditableInput extends React.Component {
   }
 
   render() {
-    return <div className="editableComponent">{this.renderComponentView}</div>;
+    return (
+      <div className="editableComponent">{this.renderComponentView()}</div>
+    );
   }
 }

@@ -57,7 +57,7 @@ class RentalManageCard extends React.Component {
                 <Link
                   className="btn btn-warning"
                   to={{
-                    pathname: `/rentals/${rental._id}/edit`,
+                    pathname: `/rentals/${rental._id}`,
                     state: { isUpdate: true }
                   }}
                 >

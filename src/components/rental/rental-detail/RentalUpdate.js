@@ -4,6 +4,10 @@ import { rentalType } from 'helpers';
 import { EditableInput } from '../../../shared/editable/EditableInput';
 
 class RentalUpdate extends React.Component {
+  updateRental = rentalData => {
+    console.log(rentalData);
+  };
+
   render() {
     const rental = this.props.rental;
 
@@ -25,6 +29,7 @@ class RentalUpdate extends React.Component {
           entity={rental}
           entityField={'title'}
           className={'rental-title'}
+          updateEntity={this.updateRental}
         />
         <h2 className="rental-city">{rental.city}</h2>
         <div className="rental-room-info">
