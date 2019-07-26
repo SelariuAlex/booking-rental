@@ -2,10 +2,16 @@ import React from 'react';
 import { RentalAssets } from './RentalAssets';
 import { rentalType } from 'helpers';
 import { EditableInput } from '../../../shared/editable/EditableInput';
+import * as actions from '../../../actions';
 
 class RentalUpdate extends React.Component {
   updateRental = rentalData => {
-    console.log(rentalData);
+    const {
+      rental: { _id },
+      dispatch
+    } = this.props;
+
+    dispatch(actions.updateRental(_id, rentalData));
   };
 
   render() {

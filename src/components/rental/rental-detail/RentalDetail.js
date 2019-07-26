@@ -17,7 +17,7 @@ class RentalDetail extends Component {
     const { isUpdate } = this.props.location.state || false;
 
     return isUpdate ? (
-      <RentalUpdate rental={rental} />
+      <RentalUpdate dispatch={this.props.dispatch} rental={rental} />
     ) : (
       <RentalDetailInfo rental={rental} />
     );
