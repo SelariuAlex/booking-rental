@@ -3,6 +3,8 @@ import { RentalAssets } from './RentalAssets';
 import { rentalType } from 'helpers';
 import { EditableInput } from '../../../shared/editable/EditableInput';
 import { EditableText } from '../../../shared/editable/EditableText';
+import { EditableSelect } from '../../../shared/editable/EditableSelect';
+
 import * as actions from '../../../actions';
 
 class RentalUpdate extends React.Component {
@@ -20,9 +22,27 @@ class RentalUpdate extends React.Component {
 
     return (
       <div className="rental">
-        <h2 className={`rental-type ${rental.category}`}>
-          {rentalType(rental.shared)} {rental.category}
-        </h2>
+        <label className={`rental-label rental-type ${rental.category}`}>
+          {' '}
+          Shared{' '}
+        </label>
+        <EditableSelect
+          entity={rental}
+          entityField={'shared'}
+          className={`rental-type ${rental.category}`}
+          updateEntity={this.updateRental}
+          options={[true, false]}
+          containerStyle={{ display: 'inline-block' }}
+        />
+
+        <EditableSelect
+          entity={rental}
+          entityField={'category'}
+          className={`rental-type ${rental.category}`}
+          updateEntity={this.updateRental}
+          options={['apartment', 'house', 'condo']}
+        />
+
         <div className="rental-owner">
           <img
             src="https://api.adorable.io/avatars/285/abott@adorable.png"
