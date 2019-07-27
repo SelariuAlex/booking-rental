@@ -19,7 +19,6 @@ class RentalUpdate extends React.Component {
 
     return (
       <div className="rental">
-        <h1>Update Component</h1>
         <h2 className={`rental-type ${rental.category}`}>
           {rentalType(rental.shared)} {rental.category}
         </h2>
@@ -37,11 +36,29 @@ class RentalUpdate extends React.Component {
           className={'rental-title'}
           updateEntity={this.updateRental}
         />
-        <h2 className="rental-city">{rental.city}</h2>
+        <EditableInput
+          entity={rental}
+          entityField={'city'}
+          className={'rental-city'}
+          updateEntity={this.updateRental}
+        />
+        <EditableInput
+          entity={rental}
+          entityField={'street'}
+          className={'rental-street'}
+          updateEntity={this.updateRental}
+        />
         <div className="rental-room-info">
           <span>
             <i className="fa fa-building" />
-            {rental.bedrooms} bedrooms
+            <EditableInput
+              entity={rental}
+              entityField={'bedrooms'}
+              className={'rental-bedrooms'}
+              containerStyle={{ display: 'inline-block' }}
+              updateEntity={this.updateRental}
+            />{' '}
+            bedrooms
           </span>
           <span>
             <i className="fa fa-user" /> {rental.bedrooms + 4} guests

@@ -47,6 +47,13 @@
         text-transform: uppercase;
       }
 
+      &-street {
+        font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
       &-room-info {
         margin-bottom: 20px;
         font-weight: 300;
@@ -54,6 +61,10 @@
 
         span {
           margin-right: 10px;
+        }
+
+        .rental-bedrooms {
+          margin-right: 0px;
         }
 
         i {

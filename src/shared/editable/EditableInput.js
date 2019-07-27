@@ -84,7 +84,9 @@ export class EditableInput extends React.Component {
 
   render() {
     return (
-      <div className="editableComponent">{this.renderComponentView()}</div>
+      <div className="editableComponent" style={this.props.containerStyle}>
+        {this.renderComponentView()}
+      </div>
     );
   }
 }
