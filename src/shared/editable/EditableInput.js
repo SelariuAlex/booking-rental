@@ -1,39 +1,7 @@
 import React from 'react';
+import { EditableComponent } from './EditableComponent';
 
-export class EditableInput extends React.Component {
-  state = {
-    isActive: false,
-    value: null,
-    originValue: null
-  };
-
-  componentDidMount() {
-    const { entity, entityField } = this.props;
-    const value = entity[entityField];
-
-    this.setState({
-      value,
-      originValue: value
-    });
-  }
-
-  disableEdit() {
-    this.setState({ isActive: false });
-  }
-
-  enableEdit() {
-    this.setState({ isActive: true });
-  }
-
-  update() {
-    const { value, originValue } = this.state;
-    const { updateEntity, entityField } = this.props;
-    if (value !== originValue) {
-      updateEntity({ [entityField]: value });
-      this.setState({ isActive: false, originValue: value });
-    }
-  }
-
+export class EditableInput extends EditableComponent {
   renderComponentView() {
     const { value, isActive } = this.state;
     const { className } = this.props;
@@ -76,10 +44,6 @@ export class EditableInput extends React.Component {
         </button>
       </React.Fragment>
     );
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
   }
 
   render() {

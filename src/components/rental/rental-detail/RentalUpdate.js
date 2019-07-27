@@ -2,6 +2,7 @@ import React from 'react';
 import { RentalAssets } from './RentalAssets';
 import { rentalType } from 'helpers';
 import { EditableInput } from '../../../shared/editable/EditableInput';
+import { EditableText } from '../../../shared/editable/EditableText';
 import * as actions from '../../../actions';
 
 class RentalUpdate extends React.Component {
@@ -67,7 +68,14 @@ class RentalUpdate extends React.Component {
             <i className="fa fa-bed" /> {rental.bedrooms + 2} beds
           </span>
         </div>
-        <p className="rental-description">{rental.description}</p>
+        <EditableText
+          entity={rental}
+          entityField={'description'}
+          className={'rental-description'}
+          updateEntity={this.updateRental}
+          rows={6}
+          cols={50}
+        />
         <hr />
         <RentalAssets />
       </div>
