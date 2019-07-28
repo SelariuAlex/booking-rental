@@ -3,6 +3,7 @@ import { RentalAssets } from './RentalAssets';
 import { EditableInput } from '../../../shared/editable/EditableInput';
 import { EditableText } from '../../../shared/editable/EditableText';
 import { EditableSelect } from '../../../shared/editable/EditableSelect';
+import { toast } from 'react-toastify';
 
 import * as actions from '../../../actions';
 
@@ -22,6 +23,10 @@ class RentalUpdate extends React.Component {
 
   render() {
     const { rental, errors } = this.props;
+
+    if (errors && errors.length > 0) {
+      toast.error(errors[0].detail);
+    }
 
     return (
       <div className="rental">
