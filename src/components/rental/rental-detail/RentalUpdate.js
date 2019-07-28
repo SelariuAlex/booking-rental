@@ -1,6 +1,5 @@
 import React from 'react';
 import { RentalAssets } from './RentalAssets';
-import { rentalType } from 'helpers';
 import { EditableInput } from '../../../shared/editable/EditableInput';
 import { EditableText } from '../../../shared/editable/EditableText';
 import { EditableSelect } from '../../../shared/editable/EditableSelect';
@@ -17,14 +16,17 @@ class RentalUpdate extends React.Component {
     dispatch(actions.updateRental(_id, rentalData));
   };
 
+  resetRentalErrors = () => {
+    this.props.dispatch(actions.resetRentalErrors());
+  };
+
   render() {
-    const rental = this.props.rental;
+    const { rental, errors } = this.props;
 
     return (
       <div className="rental">
         <label className={`rental-label rental-type ${rental.category}`}>
-          {' '}
-          Shared{' '}
+          Shared
         </label>
         <EditableSelect
           entity={rental}
@@ -33,6 +35,8 @@ class RentalUpdate extends React.Component {
           updateEntity={this.updateRental}
           options={[true, false]}
           containerStyle={{ display: 'inline-block' }}
+          errors={errors}
+          resetErrors={this.resetRentalErrors}
         />
 
         <EditableSelect
@@ -41,6 +45,8 @@ class RentalUpdate extends React.Component {
           className={`rental-type ${rental.category}`}
           updateEntity={this.updateRental}
           options={['apartment', 'house', 'condo']}
+          errors={errors}
+          resetErrors={this.resetRentalErrors}
         />
 
         <div className="rental-owner">
@@ -56,18 +62,24 @@ class RentalUpdate extends React.Component {
           entityField={'title'}
           className={'rental-title'}
           updateEntity={this.updateRental}
+          errors={errors}
+          resetErrors={this.resetRentalErrors}
         />
         <EditableInput
           entity={rental}
           entityField={'city'}
           className={'rental-city'}
           updateEntity={this.updateRental}
+          errors={errors}
+          resetErrors={this.resetRentalErrors}
         />
         <EditableInput
           entity={rental}
           entityField={'street'}
           className={'rental-street'}
           updateEntity={this.updateRental}
+          errors={errors}
+          resetErrors={this.resetRentalErrors}
         />
         <div className="rental-room-info">
           <span>
@@ -78,7 +90,9 @@ class RentalUpdate extends React.Component {
               className={'rental-bedrooms'}
               containerStyle={{ display: 'inline-block' }}
               updateEntity={this.updateRental}
-            />{' '}
+              errors={errors}
+              resetErrors={this.resetRentalErrors}
+            />
             bedrooms
           </span>
           <span>
@@ -95,6 +109,8 @@ class RentalUpdate extends React.Component {
           updateEntity={this.updateRental}
           rows={6}
           cols={50}
+          errors={errors}
+          resetErrors={this.resetRentalErrors}
         />
         <hr />
         <RentalAssets />

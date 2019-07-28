@@ -15,7 +15,8 @@ import {
   FETCH_USER_BOOKINGS_FAIL,
   FETCH_USER_BOOKINGS_INIT,
   UPDATE_RENTAL_SUCCESS,
-  UPDATE_RENTAL_FAIL
+  UPDATE_RENTAL_FAIL,
+  RESET_RENTAL_ERRORS
 } from './types';
 
 const axiosInstance = axiosService.getInstance();
@@ -86,6 +87,12 @@ export const createRental = rentalData => {
   return axiosInstance
     .post('/rentals', rentalData)
     .then(res => res.data, err => Promise.reject(err.response.data.errors));
+};
+
+export const resetRentalErrors = () => {
+  return {
+    type: RESET_RENTAL_ERRORS
+  };
 };
 
 //  User Rental
