@@ -6,22 +6,52 @@ import Booking from '../../booking/Booking';
 
 import { connect } from 'react-redux';
 import * as actions from 'actions';
+import { UserGuard } from '../../../shared/auth/UserGuard';
 
 class RentalDetail extends Component {
+  state = {
+    isAllowed: false,
+    isFetching: true
+  };
+
   componentWillMount() {
     const rentalId = this.props.match.params.id;
     this.props.dispatch(actions.fetchRentalById(rentalId));
   }
 
+  componentDidMount() {
+    const { isUpdate } = this.props.location.state || false;
+    if (isUpdate) {
+      this.verifyRentalOwner();
+    }
+  }
+
+  verifyRentalOwner = () => {
+    const rentalId = this.props.match.params.id;
+    this.setState({ isFetching: true });
+
+    return actions.verifyRentalOwner(rentalId).then(
+      () => {
+        this.setState({ isAllowed: true, isFetching: false });
+      },
+      () => {
+        this.setState({ isAllowed: false, isFetching: true });
+      }
+    );
+  };
+
   renderRentalDetail = (rental, errors) => {
     const { isUpdate } = this.props.location.state || false;
+    const { isFetching, isAllowed } = this.state;
 
     return isUpdate ? (
-      <RentalUpdate
-        dispatch={this.props.dispatch}
-        rental={rental}
-        errors={errors}
-      />
+      <UserGuard isAllowed={isAllowed} isFetching={isFetching}>
+        <RentalUpdate
+          dispatch={this.props.dispatch}
+          rental={rental}
+          errors={errors}
+        />
+      </UserGuard>
     ) : (
       <RentalDetailInfo rental={rental} />
     );

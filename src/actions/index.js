@@ -21,6 +21,10 @@ import {
 
 const axiosInstance = axiosService.getInstance();
 
+export const verifyRentalOwner = rentalId => {
+  return axiosInstance.get(`/rentals/${rentalId}/verify-user`);
+};
+
 const fetchRentalByIdInit = () => {
   return {
     type: FETCH_RENTAL_BY_ID_INIT
