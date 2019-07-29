@@ -28,6 +28,17 @@
     .navbar .dropdown-menu .dropdown-item:active {
       background-color: #61dafb; }
 
+.footer {
+  background-color: #28232a;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+  .footer .container-fluid {
+    padding: 0;
+    margin: 0;
+    color: #ededed; }
+
 .bwm-form {
   color: #484848; }
   .bwm-form h1 {
@@ -59,32 +70,32 @@
   .bwm-res-errors p {
     margin-bottom: 5px; }
 
-#rentalListing .title {
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 20px; }
-
-#rentalListing .rental-detail-link:hover {
-  text-decoration: none; }
-
-#rentalListing .bwm-card {
-  border: none; }
-  #rentalListing .bwm-card .card-block {
-    padding-top: 8px; }
-    #rentalListing .bwm-card .card-block .card-subtitle {
-      margin: 0;
-      font-weight: 500;
-      font-size: 12px;
-      text-transform: uppercase; }
-    #rentalListing .bwm-card .card-block .card-title {
-      font-size: 19px;
-      margin: 3px 0;
-      color: #484848; }
-    #rentalListing .bwm-card .card-block .card-text {
-      font-size: 14px;
-      font-weight: 300;
-      color: #7e7e7e;
-      margin-bottom: 0; }
+#rentalListing {
+  margin-bottom: 100px; }
+  #rentalListing .title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px; }
+  #rentalListing .rental-detail-link:hover {
+    text-decoration: none; }
+  #rentalListing .bwm-card {
+    border: none; }
+    #rentalListing .bwm-card .card-block {
+      padding-top: 8px; }
+      #rentalListing .bwm-card .card-block .card-subtitle {
+        margin: 0;
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase; }
+      #rentalListing .bwm-card .card-block .card-title {
+        font-size: 19px;
+        margin: 3px 0;
+        color: #484848; }
+      #rentalListing .bwm-card .card-block .card-text {
+        font-size: 14px;
+        font-weight: 300;
+        color: #7e7e7e;
+        margin-bottom: 0; }
 
 #rentalDetails .upper-section {
   margin-bottom: 30px; }
