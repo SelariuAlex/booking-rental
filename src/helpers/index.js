@@ -2,7 +2,7 @@ import * as moment from 'moment';
 
 export const rentalType = isShared => (isShared ? 'shared' : 'entire');
 
-export const prettifyDate = date => moment(date).format('MMMM do YYYY');
+export const prettifyDate = date => moment(date).format('MMMM Do YYYY');
 
 export const getRangeOfDates = (startAt, endAt, dateFormat = 'Y/MM/DD') => {
   const tempDates = [];

@@ -5,15 +5,7 @@ const moment = require('moment');
 const User = require('../models/user');
 
 exports.createBooking = function(req, res) {
-  const {
-    startAt,
-    endAt,
-    totalPrice,
-    guests,
-    days,
-    rental,
-    paymentToken
-  } = req.body;
+  const { startAt, endAt, totalPrice, guests, days, rental } = req.body;
   const user = res.locals.user;
 
   const booking = new Booking({ startAt, endAt, totalPrice, guests, days });
