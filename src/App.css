@@ -94,7 +94,6 @@
         color: #484848; }
       #rentalListing .bwm-card .card-block .card-text {
         font-size: 14px;
-        font-weight: 300;
         color: #7e7e7e;
         margin-bottom: 0; }
 
@@ -158,14 +157,16 @@
   #rentalDetails .details-section .rental-description {
     font-weight: 300;
     margin-bottom: 30px; }
-  #rentalDetails .details-section .rental-assets .title {
-    margin-bottom: 10px;
-    font-weight: 700;
-    font-size: 22px; }
-  #rentalDetails .details-section .rental-assets span {
-    display: block;
-    margin-bottom: 15px;
-    font-weight: 300; }
+  #rentalDetails .details-section .rental-assets {
+    margin-bottom: 60px; }
+    #rentalDetails .details-section .rental-assets .title {
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 22px; }
+    #rentalDetails .details-section .rental-assets span {
+      display: block;
+      margin-bottom: 15px;
+      font-weight: 300; }
 
 #userRentals .toBeDeleted {
   border-color: red; }
@@ -253,7 +254,8 @@
 
 .booking {
   padding: 20px;
-  border: 1px solid #a9a9a9; }
+  border: 1px solid #a9a9a9;
+  margin-bottom: 60px; }
   .booking .btn-confirm {
     font-size: 17px;
     font-weight: 700;

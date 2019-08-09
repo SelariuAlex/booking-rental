@@ -78,25 +78,25 @@
       "dailyRate": 68
     },
     {
-      "title": "Cozy modern Condo",
+      "title": "Condo near river",
       "city": "Oradea",
       "street": "Brancus",
       "category": "condo",
       "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/8/image.jpeg",
       "bedrooms": 2,
       "shared": true,
-      "description": "Building close to Penn Station",
+      "description": "Building close to river",
       "dailyRate": 48
     }
   ],
   "users": [
     {
-      "username": "Test User",
+      "username": "Alex",
       "email": "test@gmail.com",
       "password": "testtest"
     },
     {
-      "username": "Test User1",
+      "username": "Andrei",
       "email": "test1@gmail.com",
       "password": "testtest1"
     }
