@@ -15,6 +15,7 @@
 
   .bwm-card {
     border: none;
+    margin-bottom: 20px;
 
     .card-block {
       padding-top: 8px;
@@ -39,5 +40,17 @@
         margin-bottom: 0;
       }
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-img-top {
+    height: 18vh;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card-img-top {
+    height: 26vh;
   }
 }

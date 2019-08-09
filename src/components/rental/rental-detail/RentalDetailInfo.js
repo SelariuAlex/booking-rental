@@ -11,7 +11,9 @@ export function RentalDetailInfo(props) {
       </h2>
       <div className="rental-owner">
         <img
-          src="https://api.adorable.io/avatars/285/abott@adorable.png"
+          src={`https://randomuser.me/api/portraits/men/${
+            rental.user.username.length
+          }.jpg`}
           alt="owner"
         />
         <span>{rental.user && rental.user.username}</span>
@@ -24,7 +26,7 @@ export function RentalDetailInfo(props) {
           {rental.bedrooms} bedrooms
         </span>
         <span>
-          <i className="fa fa-user" /> {rental.bedrooms + 4} guests
+          <i className="fa fa-user" /> {rental.bedrooms + 1} guests
         </span>
         <span>
           <i className="fa fa-bed" /> {rental.bedrooms + 2} beds

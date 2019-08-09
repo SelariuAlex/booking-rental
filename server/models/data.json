@@ -1,81 +1,92 @@
 {
   "rentals": [
     {
-      "title": "Nice view on ocean",
-      "city": "San Francisco",
-      "street": "Main street",
+      "title": "Big condo in center",
+      "city": "Timisoara",
+      "street": "Piata Craiului",
       "category": "condo",
-      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
-      "bedrooms": 4,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/1/image.jpeg",
+      "bedrooms": 3,
       "shared": false,
       "description": "Very nice apartment in center of the city.",
       "dailyRate": 43
     },
     {
       "title": "Modern apartment in center",
-      "city": "New York",
-      "street": "Time Square",
+      "city": "Timisoara",
+      "street": "Paris",
       "category": "apartment",
-      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/2/image.jpeg",
       "bedrooms": 1,
       "shared": true,
-      "description": "Very nice apartment in center of the city.",
-      "dailyRate": 11
+      "description": "Very nice Modern apartment in center of the city.",
+      "dailyRate": 20
     },
     {
-      "title": "Old house in nature",
-      "city": "Spisska Nova Ves",
-      "street": "Banicka 1",
-      "category": "house",
-      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
-      "bedrooms": 5,
+      "title": "Spy apartment",
+      "city": "Arad",
+      "street": "Adi Endre",
+      "category": "apartment",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/3/image.jpeg",
+      "bedrooms": 2,
       "shared": false,
-      "description": "Very nice apartment in center of the city.",
+      "description": "Sky apartment in center of the city.",
       "dailyRate": 23
     },
     {
-      "title": "Amazing modern place",
-      "city": "San Francisco",
-      "street": "Green street",
+      "title": "House near Timisoara",
+      "city": "Ghiroc",
+      "street": "George",
       "category": "house",
-      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
-      "bedrooms": 2,
-      "shared": false,
-      "description": "Hiking routes 10 min walking away",
-      "dailyRate": 140
-    },
-    {
-      "title": "Apartment In China Town",
-      "city": "San Francisco",
-      "street": "Union Street",
-      "category": "apartment",
       "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
       "bedrooms": 3,
       "shared": false,
-      "description": "Very nice apartment in China Town",
-      "dailyRate": 89
+      "description": "Hiking routes 10 min walking away",
+      "dailyRate": 50
+    },
+    {
+      "title": "Apartment Cluj",
+      "city": "Cluj",
+      "street": "Unirii",
+      "category": "apartment",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/4/image.jpeg",
+      "bedrooms": 2,
+      "shared": false,
+      "description": "Very nice apartment in Cluj",
+      "dailyRate": 39
     },
     {
       "title": "House with Garden",
-      "city": "New York",
-      "street": "Long Island, Queens",
+      "city": "Remetea",
+      "street": "Main Street",
       "category": "house",
-      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
-      "bedrooms": 6,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/6/image.jpeg",
+      "bedrooms": 3,
       "shared": false,
-      "description": "Very nice house in Long Island with garden",
-      "dailyRate": 189
+      "description": "Very nice house in Remetea with garden",
+      "dailyRate": 60
     },
     {
       "title": "Cozy modern Condo",
-      "city": "New York",
-      "street": "Penn Station",
+      "city": "Dumbravita",
+      "street": "Ghioceilor",
       "category": "condo",
-      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
-      "bedrooms": 3,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/7/image.jpeg",
+      "bedrooms": 4,
+      "shared": true,
+      "description": "Building close Timisoara",
+      "dailyRate": 68
+    },
+    {
+      "title": "Cozy modern Condo",
+      "city": "Oradea",
+      "street": "Brancus",
+      "category": "condo",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/8/image.jpeg",
+      "bedrooms": 2,
       "shared": true,
       "description": "Building close to Penn Station",
-      "dailyRate": 68
+      "dailyRate": 48
     }
   ],
   "users": [

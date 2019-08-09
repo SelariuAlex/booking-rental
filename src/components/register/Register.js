@@ -40,8 +40,8 @@ class Register extends Component {
             <div className="col-md-6 ml-auto">
               <div className="image-container">
                 <h2 className="catchphrase">
-                  As our member you have access to most awesome places in the
-                  Timis.
+                  As our member you have access to most awesome places in
+                  Romania.
                 </h2>
                 <img
                   src={process.env.PUBLIC_URL + '/img/register.jpg'}

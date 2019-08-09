@@ -9,24 +9,24 @@
     margin-right: 30px;
     font-size: 27px;
     letter-spacing: 1px;
-    color: #61dafb !important;
+    color: #2eb9fa !important;
     font-weight: 500; }
   .navbar .nav-item {
     font-size: 14px; }
   .navbar .btn-bwm-search {
-    border-color: #61dafb;
-    color: #61dafb; }
+    border-color: #2eb9fa;
+    color: #2eb9fa; }
     .navbar .btn-bwm-search:hover, .navbar .btn-bwm-search:focus, .navbar .btn-bwm-search:active {
       background-color: transparent !important;
-      border-color: #61dafb !important;
-      color: #61dafb !important;
+      border-color: #2eb9fa !important;
+      color: #2eb9fa !important;
       box-shadow: none; }
   .navbar .nav-item {
     color: #ededed !important; }
   .navbar .dropdown-menu .dropdown-item {
     font-size: 12px; }
     .navbar .dropdown-menu .dropdown-item:active {
-      background-color: #61dafb; }
+      background-color: #2eb9fa; }
 
 .footer {
   background-color: #28232a;
@@ -79,7 +79,8 @@
   #rentalListing .rental-detail-link:hover {
     text-decoration: none; }
   #rentalListing .bwm-card {
-    border: none; }
+    border: none;
+    margin-bottom: 20px; }
     #rentalListing .bwm-card .card-block {
       padding-top: 8px; }
       #rentalListing .bwm-card .card-block .card-subtitle {
@@ -96,6 +97,14 @@
         font-weight: 300;
         color: #7e7e7e;
         margin-bottom: 0; }
+
+@media screen and (min-width: 768px) {
+  .card-img-top {
+    height: 18vh; } }
+
+@media screen and (min-width: 992px) {
+  .card-img-top {
+    height: 26vh; } }
 
 #rentalDetails .upper-section {
   margin-bottom: 30px; }
@@ -179,13 +188,13 @@
   font-size: 14px; }
 
 #userRentals .btn-bookings {
-  border-color: #61dafb;
+  border-color: #2eb9fa;
   background-color: transparent;
-  color: #61dafb; }
+  color: #2eb9fa; }
   #userRentals .btn-bookings:hover, #userRentals .btn-bookings:focus {
-    border-color: #61dafb !important;
+    border-color: #2eb9fa !important;
     background-color: transparent !important;
-    color: #61dafb !important; }
+    color: #2eb9fa !important; }
 
 #userRentals .btn-bwm {
   margin-right: 10px; }
@@ -292,10 +301,10 @@
   margin: 0; }
 
 .daterangepicker td.in-range {
-  background-color: red #61dafb; }
+  background-color: red #2eb9fa; }
 
 .daterangepicker td.active {
-  background-color: #61dafb !important; }
+  background-color: #2eb9fa !important; }
 
 .editableComponent .btn-editable {
   margin-left: 10px;
@@ -323,12 +332,12 @@
   color: #880c0c; }
 
 .btn-bwm {
-  background-color: #61dafb !important;
-  border-color: #61dafb !important;
+  background-color: #2eb9fa !important;
+  border-color: #2eb9fa !important;
   color: black !important;
   padding: 15px 30px;
   font-size: 20px; }
   .btn-bwm:hover, .btn-bwm:focus, .btn-bwm:active {
-    border-color: #61dafb !important;
+    border-color: #2eb9fa !important;
     color: black !important;
-    background-color: #61dafb !important; }
+    background-color: #2eb9fa !important; }

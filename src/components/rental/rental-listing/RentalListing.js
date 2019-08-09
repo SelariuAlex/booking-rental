@@ -11,7 +11,7 @@ class RentalListing extends Component {
   render() {
     return (
       <section id="rentalListing">
-        <h1 className="page-title">Your Home</h1>
+        <h1 className="page-title">Book available rentals</h1>
         <RentalList rentals={this.props.rentals} />
       </section>
     );
