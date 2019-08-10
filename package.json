@@ -1,6 +1,10 @@
 {
   "name": "booking-rentals",
   "version": "0.1.0",
+  "engines": {
+    "node": "11.2.0",
+    "npm": "6.8.0"
+  },
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
@@ -32,10 +36,12 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "heroku-postbuild": "npm run build",
     "build-css": "node-sass-chokidar ./src -o ./src",
     "watch-css": "npm run build-css && node-sass-chokidar ./src -o ./src --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "start": "npm start --prefix server",
+    "start-dev": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all -p build-css build-js",
     "test": "react-scripts test",
