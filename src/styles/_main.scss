@@ -9,6 +9,10 @@
 @import 'booking/booking';
 @import './editable/editable-component';
 
+.App {
+  margin-bottom: 80px;
+}
+
 .clickable {
   color: white;
   &:hover {
