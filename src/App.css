@@ -3,8 +3,9 @@
   margin-bottom: 40px;
   background-color: #28232a; }
   .navbar .bwm-search {
-    height: 50px;
-    width: 300px !important; }
+    height: 40px;
+    width: 200px;
+    margin-right: 5px; }
   .navbar .navbar-brand {
     margin-right: 30px;
     font-size: 27px;
@@ -27,6 +28,17 @@
     font-size: 12px; }
     .navbar .dropdown-menu .dropdown-item:active {
       background-color: #2eb9fa; }
+
+@media only screen and (max-width: 570px) {
+  .navbar-toggler {
+    order: 2; }
+  .navbar .navbar-brand {
+    order: 1;
+    font-size: 20px; }
+  .navbar-collapse {
+    order: 3; }
+  .form-inline {
+    order: 4; } }
 
 .footer {
   background-color: #28232a;

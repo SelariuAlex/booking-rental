@@ -68,7 +68,7 @@ class Header extends Component {
 
     return (
       <nav className="navbar navbar-dark navbar-expand-lg">
-        <div className="container">
+        <div className="container container-mobile">
           <Link className="navbar-brand" to="/rentals">
             Booking Rentals
           </Link>

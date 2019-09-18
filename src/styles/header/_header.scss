@@ -4,8 +4,9 @@
   background-color: $main-black-color;
 
   .bwm-search {
-    height: 50px;
-    width: 300px !important;
+    height: 40px;
+    width: 200px;
+    margin-right: 5px;
   }
 
   .navbar-brand {
@@ -46,5 +47,24 @@
         background-color: $main-color;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .navbar-toggler {
+    order: 2;
+  }
+
+  .navbar .navbar-brand {
+    order: 1;
+    font-size: 20px;
+  }
+
+  .navbar-collapse {
+    order: 3;
+  }
+
+  .form-inline {
+    order: 4;
   }
 }
