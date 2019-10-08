@@ -6,7 +6,7 @@ function RentalCard(props) {
   const rental = props.rental;
 
   return (
-    <div className="col-md-3 col-xs-6">
+    <div className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
       <Link to={`/rentals/${rental._id}`} className="rental-detail-link">
         <div className="card bwm-card">
           <img className="card-img-top" src={rental.image} alt={rental.title} />
