@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { RentalDetailInfo } from './RentalDetailInfo';
 import RentalUpdate from './RentalUpdate';
-import RentalMap from './RentalMap';
+// import RentalMap from './RentalMap';
 import Booking from '../../booking/Booking';
 
 import { connect } from 'react-redux';
@@ -66,10 +66,13 @@ class RentalDetail extends Component {
           <div className="upper-section">
             <div className="row">
               <div className="col-md-6">
-                <img src={rental.image} alt="" />
+                <img src={rental.image} alt="rental img" />
               </div>
               <div className="col-md-6">
-                <RentalMap location={`${rental.city}, ${rental.street}`} />
+                <img
+                  src="http://www.hotelsaccommodation.com.au/images/maps/Timisoara-Romania.gif"
+                  alt="map"
+                />
               </div>
             </div>
           </div>
