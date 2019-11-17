@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { RentalDetailInfo } from './RentalDetailInfo';
-import RentalUpdate from './RentalUpdate';
+import React, { Component } from "react";
+import { RentalDetailInfo } from "./RentalDetailInfo";
+import RentalUpdate from "./RentalUpdate";
 // import RentalMap from './RentalMap';
-import Booking from '../../booking/Booking';
+import Booking from "../../booking/Booking";
 
-import { connect } from 'react-redux';
-import * as actions from 'actions';
-import { UserGuard } from '../../../shared/auth/UserGuard';
+import { connect } from "react-redux";
+import * as actions from "actions";
+import { UserGuard } from "../../../shared/auth/UserGuard";
 
 class RentalDetail extends Component {
   state = {
@@ -64,26 +64,20 @@ class RentalDetail extends Component {
       return (
         <section id="rentalDetails">
           <div className="upper-section">
-            <div className="row">
-              <div className="col-md-6">
+            <div className="row d-flex justify-content-between">
+              <div className="col-md-7">
                 <img src={rental.image} alt="rental img" />
               </div>
-              <div className="col-md-6">
-                <img
-                  src="http://www.hotelsaccommodation.com.au/images/maps/Timisoara-Romania.gif"
-                  alt="map"
-                />
+              <div className="col-md-4">
+                <Booking rental={rental} />
               </div>
             </div>
           </div>
 
           <div className="details-section">
             <div className="row">
-              <div className="col-md-8">
+              <div className="col-md-12">
                 {this.renderRentalDetail(rental, errors)}
-              </div>
-              <div className="col-md-4">
-                <Booking rental={rental} />
               </div>
             </div>
           </div>
