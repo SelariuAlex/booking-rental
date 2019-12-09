@@ -1,13 +1,14 @@
-@import 'variables.scss';
-@import 'header/header.scss';
-@import 'footer/footer.scss';
-@import 'form/form.scss';
+@import "variables.scss";
+@import "header/header.scss";
+@import "footer/footer.scss";
+@import "form/form.scss";
+@import "featured/featured.scss";
 
-@import 'rental/rental-listing.scss';
-@import 'rental/rental-detail.scss';
-@import 'rental/rental-manage.scss';
-@import 'booking/booking';
-@import './editable/editable-component';
+@import "rental/rental-listing.scss";
+@import "rental/rental-detail.scss";
+@import "rental/rental-manage.scss";
+@import "booking/booking";
+@import "./editable/editable-component";
 
 .App {
   margin-bottom: 80px;
