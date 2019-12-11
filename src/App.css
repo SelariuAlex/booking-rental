@@ -85,6 +85,9 @@
 .text-blue {
   color: #2eb9fa; }
 
+.featured {
+  background: #ededed; }
+
 #rentalListing {
   margin-bottom: 100px; }
   #rentalListing .title {

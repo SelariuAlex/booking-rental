@@ -75,9 +75,9 @@ class App extends Component {
                 <Route exact path="/login" component={Login} />
                 <LoggedInRoute exact path="/register" component={Register} />
               </Switch>
-              <Featured />
-              <Footer />
             </div>
+            <Featured />
+            <Footer />
           </div>
         </BrowserRouter>
       </Provider>

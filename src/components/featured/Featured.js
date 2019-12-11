@@ -6,12 +6,12 @@ import FeaturedImg3 from "../../images/featured-3.jpeg";
 
 export const Featured = () => {
   return (
-    <section id="featured" class="featured py-5">
+    <section class="featured py-3">
       <div class="container">
         <div class="row">
           <div class="col text-center section-title mb-3">
             <h2 class="text-blue text-capitalize">Featured properties</h2>
-            <p class="w-75 mx-auto">Our recommendations</p>
+            <h4 class="w-75 mx-auto">Our recommendations</h4>
           </div>
         </div>
         <div class="row">
