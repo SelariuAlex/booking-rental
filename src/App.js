@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
+import React, { Component } from "react";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
-import Header from 'shared/Header';
-import RentalListing from 'components/rental/rental-listing/RentalListing';
-import RentalSearchListing from './components/rental/rental-listing/RentalSearchListing';
-import RentalDetail from 'components/rental/rental-detail/RentalDetail';
-import RentalCreate from './components/rental/rental-create/RentalCreate';
-import Login from './components/login/Login';
-import Register from './components/register/Register';
-import RentalManage from './components/rental/rental-manage/RentalManage';
-import BookingManage from './components/booking/booking-manage/BookingManage';
-import Footer from './shared/Footer';
-import { ProtectedRoute } from './shared/auth/ProtectedRoute';
-import { LoggedInRoute } from './shared/auth/LoggedInRoute';
+import Header from "shared/Header";
+import RentalListing from "components/rental/rental-listing/RentalListing";
+import RentalSearchListing from "./components/rental/rental-listing/RentalSearchListing";
+import RentalDetail from "components/rental/rental-detail/RentalDetail";
+import RentalCreate from "./components/rental/rental-create/RentalCreate";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
+import RentalManage from "./components/rental/rental-manage/RentalManage";
+import BookingManage from "./components/booking/booking-manage/BookingManage";
+import Featired, { Featured } from "./components/featured/Featured";
+import Footer from "./shared/Footer";
+import { ProtectedRoute } from "./shared/auth/ProtectedRoute";
+import { LoggedInRoute } from "./shared/auth/LoggedInRoute";
 
-import * as actions from 'actions';
+import * as actions from "actions";
 
-import 'App.css';
+import "App.css";
 
-const store = require('./reducers').init();
+const store = require("./reducers").init();
 
 class App extends Component {
   componentWillMount() {
@@ -74,6 +75,7 @@ class App extends Component {
                 <Route exact path="/login" component={Login} />
                 <LoggedInRoute exact path="/register" component={Register} />
               </Switch>
+              <Featured />
               <Footer />
             </div>
           </div>

@@ -82,6 +82,9 @@
   .bwm-res-errors p {
     margin-bottom: 5px; }
 
+.text-blue {
+  color: #2eb9fa; }
+
 #rentalListing {
   margin-bottom: 100px; }
   #rentalListing .title {
